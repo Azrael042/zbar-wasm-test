@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF417 Test - zbar-wasm</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .result { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>PDF417 Support Test</h1>
+    <p>Testing PDF417 barcode support in zbar-wasm...</p>
+    
+    <div id="result" class="result">Loading...</div>
+
+    <script type="module">
+        import * as zbarWasm from 'https://cdn.jsdelivr.net/npm/@undecaf/zbar-wasm@0.11.0/dist/index.js';
+
+        const resultDiv = document.getElementById('result');
+
+        async function testPDF417Support() {
+            try {
+                resultDiv.innerHTML = 'Testing PDF417 support...';
+                
+                // Test 1: Check if PDF417 enum exists
+                if (zbarWasm.ZBarSymbolType.ZBAR_PDF417 !== 57) {
+                    throw new Error(`PDF417 enum value incorrect: ${zbarWasm.ZBarSymbolType.ZBAR_PDF417}`);
+                }
+                
+                resultDiv.innerHTML += '<br>✅ PDF417 enum value correct (57)';
+                
+                // Test 2: Check if PDF417 type name exists
+                const pdf417TypeName = zbarWasm.ZBarSymbolType[zbarWasm.ZBarSymbolType.ZBAR_PDF417];
+                if (pdf417TypeName !== 'ZBAR_PDF417') {
+                    throw new Error(`PDF417 type name incorrect: ${pdf417TypeName}`);
+                }
+                
+                resultDiv.innerHTML += '<br>✅ PDF417 type name correct (ZBAR_PDF417)';
+                
+                // Test 3: Try to create a scanner with PDF417 enabled
+                const scanner = await zbarWasm.ZBarScanner.create();
+                const configResult = scanner.setConfig(
+                    zbarWasm.ZBarSymbolType.ZBAR_PDF417, 
+                    zbarWasm.ZBarConfigType.ZBAR_CFG_ENABLE, 
+                    1
+                );
+                
+                resultDiv.innerHTML += '<br>✅ PDF417 configuration successful';
+                resultDiv.innerHTML += '<br>✅ Scanner created with PDF417 support';
+                
+                scanner.destroy();
+                
+                resultDiv.innerHTML += '<br><br>🎉 <strong>PDF417 support is working!</strong>';
+                resultDiv.className = 'result success';
+                
+            } catch (error) {
+                resultDiv.innerHTML += `<br><br>❌ <strong>Error:</strong> ${error.message}`;
+                resultDiv.className = 'result error';
+                console.error('PDF417 test error:', error);
+            }
+        }
+
+        testPDF417Support();
+    </script>
+</body>
+</html> 
