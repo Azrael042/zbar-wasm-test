@@ -144,6 +144,12 @@ export const imageFiles: Record<string, ImageFile> = {
       [new ExpectedSymbol(ZBarSymbolType.ZBAR_I25, '123456789098765432', ZBarOrientation.ZBAR_ORIENT_UP)]
     ),
 
+  'pdf417':
+    new ImageFile(
+      'pdf417',
+      [new ExpectedSymbol(ZBarSymbolType.ZBAR_PDF417, 'PDF417-TEST-DATA', ZBarOrientation.ZBAR_ORIENT_UP)]
+    ),
+
   'qr_code':
     new ImageFile(
       'qr_code',

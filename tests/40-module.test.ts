@@ -1,7 +1,7 @@
 import { ImageFile, imageFiles } from './imageFiles'
 import { ZBarScanner, scanImageData, scanGrayBuffer, ZBarSymbolType, ZBarConfigType, scanRGBABuffer } from '../dist/main.cjs'
 
-const singleBarcodes = [ 'codabar', 'code_39', 'code_93', 'code_128', 'databar', 'ean_13', 'itf', 'qr_code' ]
+const singleBarcodes = [ 'codabar', 'code_39', 'code_93', 'code_128', 'databar', 'ean_13', 'itf', 'pdf417', 'qr_code' ]
 const compositeBarcodes = [ 'code_39x4', 'ean_13+5' ]
 
 

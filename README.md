@@ -16,7 +16,7 @@ of the [ZBar Bar Code Reader](https://github.com/mchehab/zbar) written in C/C++.
 + Runs in modern browsers, in Node.js and also in workers
 + Deployment size approx. 330 kByte
 + Supports Code-39, Code-93, Code-128, Codabar, Databar/Expanded,
-  EAN/GTIN-5/8/13, ISBN-10/13, ISBN-13+2, ISBN-13+5, ITF (Interleaved 2 of 5), QR Code, UPC-A/E.
+  EAN/GTIN-5/8/13, ISBN-10/13, ISBN-13+2, ISBN-13+5, ITF (Interleaved 2 of 5), PDF417, QR Code, UPC-A/E.
 + Detects multiple barcodes per frame, also with different types
 + Barcodes may be oriented horizontally or vertically
 + Scans [`ImageData`](https://developer.mozilla.org/en-US/docs/Web/API/ImageData) and 

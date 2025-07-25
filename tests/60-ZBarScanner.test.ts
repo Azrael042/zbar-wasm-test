@@ -2,7 +2,7 @@ import { ImageFile, imageFiles } from './imageFiles'
 import { getDefaultScanner, scanImageData } from '../dist/main.cjs'
 
 const singleBarcodes = [
-  'codabar', 'code_39', 'code_93', 'code_128', 'databar', 'ean_13', 'itf',
+  'codabar', 'code_39', 'code_93', 'code_128', 'databar', 'ean_13', 'itf', 'pdf417',
   'qr_code', 'qr_code-200mb', 'qr_code-utf-8-1', 'qr_code-utf-8-2',
 ]
 
