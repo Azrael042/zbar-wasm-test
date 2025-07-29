@@ -1,4 +1,4 @@
-import pkg from './package.json' assert { type: 'json' }
+import { readFileSync } from 'fs'; const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
 import alias from '@rollup/plugin-alias'
 import commonjs from '@rollup/plugin-commonjs'
 import nodePolyfills from 'rollup-plugin-polyfill-node'

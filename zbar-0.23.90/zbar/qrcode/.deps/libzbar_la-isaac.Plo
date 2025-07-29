@@ -1,0 +1,21 @@
+qrcode/libzbar_la-isaac.lo: qrcode/isaac.c \
+  /projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/float.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/float.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/math.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/math.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/string.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/string.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/strings.h \
+  qrcode/isaac.h
+/projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/float.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/float.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/math.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/math.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/string.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/string.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/strings.h:
+qrcode/isaac.h:

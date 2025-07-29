@@ -1,0 +1,2 @@
+qrcode/libzbar_la-bch15_5.lo: qrcode/bch15_5.c qrcode/bch15_5.h
+qrcode/bch15_5.h:

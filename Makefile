@@ -17,9 +17,10 @@ EM_PODMAN = podman run $(EM_OPTS)
 EM_ENGINE = $(EM_PODMAN)
 
 # See https://emscripten.org/docs/tools_reference/emcc.html
-EMCC = $(EM_ENGINE) emcc
-EMMAKE = $(EM_ENGINE) emmake
-EMCONFIG = $(EM_ENGINE) emconfigure
+# Use local Emscripten tools instead of containers
+EMCC = emcc
+EMMAKE = emmake
+EMCONFIG = emconfigure
 
 ZBAR_DEPS = $(ZBAR_SRC)/make.done
 ZBAR_OBJS = $(ZBAR_SRC)/zbar/*.o $(ZBAR_SRC)/zbar/*/*.o
@@ -80,12 +81,12 @@ $(BUILD)/symbol.test.o: $(ZBAR_DEPS) $(TESTS)/symbol.test.c
 	$(EMCC) -Wall -Werror -g2 -c $(TESTS)/symbol.test.c -o $@ $(ZBAR_INC)
 
 $(ZBAR_DEPS): $(ZBAR_SRC)/Makefile
-	cd $(ZBAR_SRC) && $(EMMAKE) make CFLAGS=-Os CXXFLAGS=-Os \
-		DEFS="-DZNO_MESSAGES -DHAVE_CONFIG_H"
+	cd $(ZBAR_SRC) && $(EMMAKE) make CFLAGS="-Os -Wall -Wno-parentheses -Wno-unused-function" CXXFLAGS="-Os -Wno-unused-function" \
+		DEFS="-DZNO_MESSAGES -DHAVE_CONFIG_H" LDFLAGS=""
 	touch -m $(ZBAR_DEPS)
 
 $(ZBAR_SRC)/Makefile: $(ZBAR_SRC)/configure
-	cd $(ZBAR_SRC) && $(EMCONFIG) ./configure --without-x --without-xshm \
+	cd $(ZBAR_SRC) && $(EMCONFIG) ./configure --build=x86_64-linux-gnu --host=wasm32-unknown-emscripten --enable-codes=pdf417,qrcode,sqcode,aztec --without-x --without-xshm \
 		--without-xv --without-jpeg --without-libiconv-prefix \
 		--without-imagemagick --without-npapi --without-gtk \
 		--without-python --without-qt --without-xshm --disable-video \

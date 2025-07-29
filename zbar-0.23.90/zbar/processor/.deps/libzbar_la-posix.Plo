@@ -1,0 +1,70 @@
+processor/libzbar_la-posix.lo: processor/posix.c processor.h \
+  ../include/config.h \
+  /projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/inttypes.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/inttypes.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h \
+  /projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/stdint.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdint.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/stdint.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/unistd.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/wasi/api.h \
+  /projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/stddef.h \
+  /projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/__stddef_max_align_t.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/posix.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/string.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/string.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/strings.h \
+  ../include/zbar.h error.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdio.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/errno.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/errno.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/assert.h \
+  thread.h event.h mutex.h timer.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/time.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/time.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/sys/time.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/sys/select.h \
+  processor/posix.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/poll.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/poll.h
+processor.h:
+../include/config.h:
+/projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/inttypes.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/inttypes.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h:
+/projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/stdint.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdint.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/stdint.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/unistd.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/wasi/api.h:
+/projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/stddef.h:
+/projects/zbar-wasm-test/emsdk/upstream/lib/clang/17/include/__stddef_max_align_t.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/posix.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/string.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/string.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/strings.h:
+../include/zbar.h:
+error.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdio.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/errno.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/errno.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/assert.h:
+thread.h:
+event.h:
+mutex.h:
+timer.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/time.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/time.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/sys/time.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/sys/select.h:
+processor/posix.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/poll.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/poll.h:

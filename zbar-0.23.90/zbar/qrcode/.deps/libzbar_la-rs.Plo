@@ -1,0 +1,19 @@
+qrcode/libzbar_la-rs.lo: qrcode/rs.c \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/string.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/string.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/strings.h \
+  qrcode/rs.h
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/string.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/string.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/strings.h:
+qrcode/rs.h:

@@ -1,0 +1,7 @@
+libzbar_la-refcnt.lo: refcnt.c refcnt.h ../include/config.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/assert.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h
+refcnt.h:
+../include/config.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/assert.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h:

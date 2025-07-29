@@ -1,0 +1,13 @@
+qrcode/libzbar_la-util.lo: qrcode/util.c \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h \
+  /projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h \
+  qrcode/util.h
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/features.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h:
+/projects/zbar-wasm-test/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h:
+qrcode/util.h:
