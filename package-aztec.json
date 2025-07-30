@@ -1,0 +1,107 @@
+{
+  "name": "@custom/aztec-decoder",
+  "version": "1.0.0",
+  "description": "WebAssembly-powered Aztec barcode decoder optimized for browser environments",
+  "main": "./build-aztec/aztec.js",
+  "module": "./build-aztec/aztec.mjs",
+  "types": "./dist/aztec-main.d.ts",
+  "browser": {
+    "./build-aztec/aztec.js": "./build-aztec/aztec-inlined.js",
+    "./build-aztec/aztec.mjs": "./build-aztec/aztec-inlined.mjs"
+  },
+  "exports": {
+    ".": {
+      "browser": {
+        "import": "./build-aztec/aztec-inlined.mjs",
+        "require": "./build-aztec/aztec-inlined.js"
+      },
+      "node": {
+        "import": "./build-aztec/aztec.mjs",
+        "require": "./build-aztec/aztec.js"
+      },
+      "import": "./build-aztec/aztec.mjs",
+      "require": "./build-aztec/aztec.js"
+    },
+    "./wasm": "./build-aztec/aztec.wasm",
+    "./inlined": {
+      "import": "./build-aztec/aztec-inlined.mjs",
+      "require": "./build-aztec/aztec-inlined.js"
+    },
+    "./typescript": "./src/aztec-main.ts"
+  },
+  "files": [
+    "build-aztec/",
+    "src/AztecDecoder.ts",
+    "src/aztec-main.ts",
+    "src/aztec-instance.ts",
+    "src/aztec-utils.ts",
+    "src/enum.ts",
+    "src/ZBarImage.ts",
+    "src/ZBarSymbol.ts",
+    "src/ZBarInstance.ts",
+    "src/CppObject.ts",
+    "dist/",
+    "demo/"
+  ],
+  "scripts": {
+    "build": "make -f Makefile.aztec aztec",
+    "build-wasm": "make -f Makefile.aztec aztec",
+    "clean": "make -f Makefile.aztec clean-aztec",
+    "demo": "cd demo && python -m http.server 8000",
+    "test-demo": "open demo/aztec-demo.html"
+  },
+  "keywords": [
+    "aztec",
+    "barcode",
+    "decoder",
+    "scanner",
+    "webassembly",
+    "wasm",
+    "browser",
+    "typescript",
+    "zbar",
+    "qrcode"
+  ],
+  "author": "Custom Aztec Decoder",
+  "license": "LGPL-2.1+",
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "Chrome >= 57",
+    "Firefox >= 52",
+    "Safari >= 11",
+    "Edge >= 16"
+  ],
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "http-server": "^14.1.1"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "buildInfo": {
+    "zbarVersion": "0.23.90-aztec",
+    "emscriptenVersion": "3.1.44",
+    "wasmSize": "~29KB",
+    "jsSize": "~14KB",
+    "totalSize": "~43KB",
+    "inlinedSize": "~51KB",
+    "supportedFormats": ["AZTEC"],
+    "buildDate": "2024-07-29",
+    "optimizations": [
+      "Aztec-only decoder",
+      "Minimal size optimization",
+      "Browser-optimized builds",
+      "Single-file inlined version"
+    ]
+  },
+  "usage": {
+    "basic": "import aztecWasm from '@custom/aztec-decoder'; const instance = await aztecWasm();",
+    "typescript": "import { AztecDecoder } from '@custom/aztec-decoder/typescript';",
+    "cdn": "https://unpkg.com/@custom/aztec-decoder/build-aztec/aztec-inlined.js"
+  }
+} 

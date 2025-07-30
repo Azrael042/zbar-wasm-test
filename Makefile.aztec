@@ -1,0 +1,62 @@
+# Aztec-only WebAssembly Build Configuration
+# Uses the custom-built libzbar.a with Aztec decoder only
+
+BUILD = build-aztec
+DIST = dist-aztec
+SRC = src
+
+# Emscripten Local Configuration
+EMSDK_PATH = emsdk
+EMCC = emcc
+
+# Custom ZBar Aztec-only library paths
+AZTEC_LIB = zbar-custom/zbar/.libs/libzbar.a
+AZTEC_INC = -I zbar-custom/zbar/include/ -I zbar-custom/include/
+
+# Emscripten compilation flags optimized for Aztec decoder
+EMCC_FLAGS = -O2 -Wall \
+	-s ALLOW_MEMORY_GROWTH=1 \
+	-s EXPORTED_FUNCTIONS="['_malloc','_free']" \
+	-s EXPORTED_RUNTIME_METHODS="['setValue','getValue','HEAPU8','HEAP8','writeArrayToMemory']" \
+	-s MODULARIZE=1 \
+	-s EXPORT_NAME=aztecWasm \
+	-s ENVIRONMENT=web,worker
+
+# Output targets
+AZTEC_WASM = $(BUILD)/aztec.wasm
+AZTEC_JS = $(BUILD)/aztec.js
+AZTEC_MJS = $(BUILD)/aztec.mjs
+AZTEC_INLINED_JS = $(BUILD)/aztec-inlined.js
+AZTEC_INLINED_MJS = $(BUILD)/aztec-inlined.mjs
+
+.PHONY: all aztec clean-aztec
+
+all: aztec
+
+aztec: $(AZTEC_WASM) $(AZTEC_JS) $(AZTEC_MJS) $(AZTEC_INLINED_JS) $(AZTEC_INLINED_MJS)
+
+clean-aztec:
+	-rm -rf $(BUILD) $(DIST)
+
+# Build WebAssembly module from our custom Aztec library
+$(AZTEC_WASM) $(AZTEC_JS) $(AZTEC_MJS) $(AZTEC_INLINED_JS) $(AZTEC_INLINED_MJS): $(AZTEC_LIB) $(SRC)/module.c
+	mkdir -p $(BUILD)/
+	$(EMCC) $(EMCC_FLAGS) -o $(AZTEC_JS) $(SRC)/module.c $(AZTEC_INC) $(AZTEC_LIB)
+	$(EMCC) $(EMCC_FLAGS) -o $(AZTEC_MJS) -sEXPORT_ES6 $(SRC)/module.c $(AZTEC_INC) $(AZTEC_LIB)
+	$(EMCC) $(EMCC_FLAGS) -o $(AZTEC_INLINED_JS) -sSINGLE_FILE $(SRC)/module.c $(AZTEC_INC) $(AZTEC_LIB)
+	$(EMCC) $(EMCC_FLAGS) -o $(AZTEC_INLINED_MJS) -sEXPORT_ES6 -sSINGLE_FILE $(SRC)/module.c $(AZTEC_INC) $(AZTEC_LIB)
+
+# Copy to distribution directory
+dist-aztec: aztec
+	mkdir -p $(DIST)/
+	cp $(BUILD)/aztec.* $(DIST)/
+
+# Verify our custom library exists
+check-lib:
+	@if [ ! -f $(AZTEC_LIB) ]; then \
+		echo "Error: Custom Aztec library not found at $(AZTEC_LIB)"; \
+		echo "Please ensure the Aztec-only ZBar library has been built"; \
+		exit 1; \
+	fi
+	@echo "✅ Custom Aztec library found: $(AZTEC_LIB)"
+	@ls -lh $(AZTEC_LIB) 
